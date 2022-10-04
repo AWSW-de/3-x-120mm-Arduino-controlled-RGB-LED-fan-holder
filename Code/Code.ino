@@ -46,7 +46,6 @@ String code_version = "V1.0.0";
 // #
 // # You will need to add the following libraries to your Arduino IDE to use the project:
 // # - Adafruit NeoPixel              // by Adafruit:                     https://github.com/adafruit/Adafruit_NeoPixel
-// # - WiFiManager                    // by tablatronix / tzapu:          https://github.com/tzapu/WiFiManager
 // #
 // ###############################################################################################################################
 #include <Adafruit_NeoPixel.h>        // RGB LED library
