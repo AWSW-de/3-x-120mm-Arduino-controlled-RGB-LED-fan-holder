@@ -38,7 +38,7 @@
 // # Code version:
 // #
 // ###############################################################################################################################
-String code_version = "V1.0.0";
+String code_version = "V1.0.1";
 
 
 // ###############################################################################################################################
@@ -138,16 +138,22 @@ void loop() {
   }
 
   switch (FanSpdButtonCount) {
-    case 0:                                       // Fan Speed HIGH
-      fanspeed = 255;
+    case 0:                                       // Fan Speed 100%
+      fanspeed = 25.5 * 10;
       break;
-    case 1:                                       // Fan Speed MEDIUM
-      fanspeed = 128;
+    case 1:                                       // Fan Speed 75%
+      fanspeed = 25.5 * 7.5;
       break;
-    case 2:                                       // Fan Speed LOW
-      fanspeed = 1;
+    case 2:                                       // Fan Speed 50%
+      fanspeed = 25.5 * 5;
       break;
-    case 3:                                       // Goto 0
+    case 3:                                       // Fan Speed 25%
+      fanspeed = 25.5 * 2.5;
+      break;
+    case 4:                                       // Fan Speed 10%
+      fanspeed = 25.5 * 1;
+      break;
+    case 5:                                       // Goto 0
       Serial.println("Fan Speed Count Old: " + String(FanSpdButtonCount));
       FanSpdButtonCount = 0;
       Serial.println("Fan Speed Button Count New: " + String(FanSpdButtonCount));
@@ -155,16 +161,22 @@ void loop() {
   }
 
   switch (LEDBrightnessButtonCount) {
-    case 0:                                       // Brightness LEDs HIGH
-      LEDBRIGHTNESS = 255;
+    case 0:                                       // Brightness LEDs 100%
+      LEDBRIGHTNESS = 25.5 * 10;
       break;
-    case 1:                                       // Brightness LEDs MEDIUM
-      LEDBRIGHTNESS = 128;
+    case 1:                                       // Brightness LEDs 75%
+      LEDBRIGHTNESS = 25.5 * 7.5;
       break;
-    case 2:                                       // Brightness LEDs OFF
+    case 2:                                       // Brightness LEDs 50%
+      LEDBRIGHTNESS = 25.5 * 5;
+      break;
+    case 3:                                       // Brightness LEDs 25%
+      LEDBRIGHTNESS = 25.5 * 2.5;
+      break;
+    case 4:                                       // Brightness LEDs 0% / OFF
       LEDBRIGHTNESS = 0;
       break;
-    case 3:                                       // Goto 0
+    case 5:                                       // Goto 0
       Serial.println("LED BrightnessButton Count Old: " + String(LEDBrightnessButtonCount));
       LEDBrightnessButtonCount = 0;
       Serial.println("LED Brightness Button Count New: " + String(LEDBrightnessButtonCount));
