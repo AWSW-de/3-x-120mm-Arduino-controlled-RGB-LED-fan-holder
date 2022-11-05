@@ -38,7 +38,7 @@
 // # Code version:
 // #
 // ###############################################################################################################################
-String code_version = "V1.0.1";
+String code_version = "V1.0.4";
 
 
 // ###############################################################################################################################
@@ -54,12 +54,12 @@ String code_version = "V1.0.1";
 // ###############################################################################################################################
 // # Hardware settings:
 // ###############################################################################################################################
-int FanPWM = D7;                      // Fan PWM pin
-int FanRPM = D6;                      // Fan RPM pin
 int PushButtonInput1 = D1;            // Push button - set PWM Fan speed
 int PushButtonInput2 = D2;            // Push button - set the LED animation
 int PushButtonInput3 = D3;            // Push button - set the LED brightness
 int LEDPIN = D5;                      // Fan LED pin
+int FanRPM = D6;                      // Fan RPM pin
+int FanPWM = D7;                      // Fan PWM pin
 
 
 // ###############################################################################################################################
@@ -154,7 +154,7 @@ void loop() {
       fanspeed = 25.5 * 1;
       break;
     case 5:                                       // Goto 0
-      Serial.println("Fan Speed Count Old: " + String(FanSpdButtonCount));
+      Serial.println("Fan Speed Button Count Old: " + String(FanSpdButtonCount));
       FanSpdButtonCount = 0;
       Serial.println("Fan Speed Button Count New: " + String(FanSpdButtonCount));
       break;
@@ -177,7 +177,7 @@ void loop() {
       LEDBRIGHTNESS = 0;
       break;
     case 5:                                       // Goto 0
-      Serial.println("LED BrightnessButton Count Old: " + String(LEDBrightnessButtonCount));
+      Serial.println("LED Brightness Button Count Old: " + String(LEDBrightnessButtonCount));
       LEDBrightnessButtonCount = 0;
       Serial.println("LED Brightness Button Count New: " + String(LEDBrightnessButtonCount));
       break;
